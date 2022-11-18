@@ -53,7 +53,7 @@ resource "aws_lb_listener" "main" {
   }
 }
 
-resource "aws_lb_listener" "public-htt" {
+resource "aws_lb_listener" "public-http" {
   count             = var.internal ? 0 : 1
   load_balancer_arn = aws_lb.main.arn
   port              = "80"
@@ -69,5 +69,6 @@ resource "aws_lb_listener" "public-htt" {
     }
   }
 }
+
 
 

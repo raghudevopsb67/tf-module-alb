@@ -3,6 +3,6 @@ output "lb_dns_name" {
 }
 
 output "lb_listener_arn" {
-  value = aws_lb_listener.main.arn
+  value = var.internal ? aws_lb_listener.main[0].arn : aws_lb_listener.public-http[0].arn
 }
 
